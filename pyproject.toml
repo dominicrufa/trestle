@@ -21,7 +21,11 @@ dependencies = [
   "scipy>=1.12",
   "arviz>=0.18",
   "xarray>=2024.5.0",
+  "requests>=2.32",
 ]
+
+[project.scripts]
+trestle-nih-reporter = "trestle.api.cli:main"
 
 [project.optional-dependencies]
 dev = [
@@ -39,7 +43,10 @@ viz = [
 ]
 
 [tool.setuptools]
-py-modules = []
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.ruff]
 line-length = 100

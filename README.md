@@ -68,6 +68,28 @@ Typical loop:
 - Run checks and tests (`uv run ...`).
 - Update the lockfile only when dependency definitions change.
 
+## Testing
+
+Run the default suite (no live NIH API calls):
+
+```bash
+uv run pytest
+```
+
+The default suite includes unit/CLI tests with mocked network behavior and
+does not hit external services.
+
+For a detailed testing guide, see:
+
+- [`tests/README.md`](tests/README.md)
+
+If imports or entry points look stale after local package/layout edits, force
+reinstall before testing:
+
+```bash
+uv sync --extra dev --reinstall
+```
+
 ## Dependency Groups
 
 When extras are defined in `pyproject.toml`, you can install optional groups:
