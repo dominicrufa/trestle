@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trestle"
+version = "0.1.0"
+description = "Just some scaffolding"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+  "jax>=0.4.33",
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+  "seaborn>=0.13",
+  "numpyro>=0.15",
+  "flax>=0.10",
+  "dm-haiku>=0.0.13",
+  "scikit-learn>=1.5",
+  "pandas>=2.2",
+  "scipy>=1.12",
+  "arviz>=0.18",
+  "xarray>=2024.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3",
+  "ruff>=0.6",
+  "mypy>=1.11",
+  "pre-commit>=3.8",
+]
+notebooks = [
+  "jupyterlab>=4.2",
+  "ipykernel>=6.29",
+]
+viz = [
+  "plotly>=5.24",
+]
+
+[tool.setuptools]
+py-modules = []
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.uv]
+package = true

@@ -1,0 +1,37 @@
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+.python-version
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# Packaging/build
+build/
+dist/
+*.egg-info/
+
+# Coverage
+.coverage
+coverage.xml
+htmlcov/
+
+# Editor/OS
+.DS_Store
+.vscode/
+.idea/
+
+# Local data/output artifacts
+data/raw/
+data/interim/
+data/processed/
+outputs/
+figures/
